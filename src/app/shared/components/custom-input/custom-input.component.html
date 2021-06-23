@@ -1,0 +1,8 @@
+<p>Custom Input Component</p>
+
+<form>
+  <mat-form-field class="example-full-width">
+    <mat-label>{{labelForInput}}</mat-label>
+      <input matInput [(ngModel)]="value" [ngModelOptions]="{standalone: true}" />
+</mat-form-field>
+</form>

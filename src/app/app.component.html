@@ -1,0 +1,54 @@
+
+<mat-card>Reusable Form Controls With Angular Material</mat-card>
+
+<hr>
+<app-button (onClick)="functioncall($event)" [label]="label"></app-button>
+<br>
+<hr>
+
+<!--
+  Calling Radio Component
+-->
+
+
+<form [formGroup]="controlsFormGroup">
+  <div *ngIf="controlsFormGroup">
+    <app-radio [parentFormGroup]="controlsFormGroup" [parentFormControl]="radioexample"></app-radio>
+  </div><br>
+  <button mat-raised-button color="primary" (click)="save()">Save</button>
+  
+</form>
+<br>
+<hr>
+
+<!--
+  Calling CustomInput Component
+-->
+
+<app-custom-input [(ngModel)]="external" [labelForInput]="labelForInput" name="externalVal" #validations="ngModel" ngDefaultControl></app-custom-input>
+  <br>
+  Hi {{external}} 
+<br>
+<hr>
+
+<!--
+  Calling Autocomplete Component
+-->
+
+
+  <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+  <my-auto-complete
+    formControlName="product"
+    placeholder="Products"
+    [options]="pdts$ | async"
+  >
+  </my-auto-complete>
+  <br>
+  
+  <div>
+    <button mat-raised-button color="primary">submit</button>
+  </div>
+</form>
+
+
+ 
