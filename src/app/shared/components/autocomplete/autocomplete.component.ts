@@ -95,7 +95,7 @@ export class AutocompleteComponent implements OnInit, ControlValueAccessor, OnCh
       next: (value) => {        
         if (typeof value === "string") {          
           if (this.isMinLength(value)) {            
-            this.isSearching = true            /**             * Fire change detection to display the searching status option             */            
+            this.isSearching = true           
             this.changeDetectorRef.detectChanges()            
             fn(value.toUpperCase())          
             } else {            
